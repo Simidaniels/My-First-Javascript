@@ -1,4 +1,7 @@
 // alert on the webpage
+function sayHello()  {
+    alert('Hello Mr Daniel')
+};
 
 
 // 1// String, Numbers, Boolean, null, undefined, 
@@ -43,29 +46,29 @@ const d = 'technology, computers, it, code';
 // In the tutorial S was used but i had to use D because S has been declared.
 // D replace the S in the tutorial to avoid errors in this code.
 console.log(d.split(', '));
-// D as used in line 41.
+// D as used in line 42.
 // now we have an array of 4 values (we have each word in each array value in the output).
 
 
 // ARRAYS - Variables that hold multiple values //
 
 const numbers = new Array(1,2,3,4,5);
-// we set a variable called numbers and we set it as new Array in line 51.
+// we set a variable called numbers and we set it as new Array in line 52.
 // When we see the 'new' keyword and then something after it means it's a Constructor.
 // Which means we are constructing an Array.
 console.log(numbers);
 // Another example below
 const fruits = ['apples', 'oranges', 'pears'];
 console.log(fruits);
-// N.B- In javascript we can h ave multiple datatypes within the same array.
-// ou can put a number, a boolean in the array it doesn't affects the code.
+// N.B- In javascript we can have multiple datatypes within the same array.
+// we can put a number, a boolean in the array it doesn't affects the code.
 console.log(fruits[1]);
-// This output is for accessing on of those variable in the array.
+// This output is for accessing one of those variable in the array.
 // The output was 'oranges' reason is because arrays are zero based.
 /* What i mean by arrays are zero based is;
 counting the array we have APPLES which is 0, ORANGES which is 1, and PEARS which is 2.*/
 fruits[3] = 'grapes';
-// Line 66 would added to the array automatically.
+// Line 67 would added to the array automatically.
 // N.B- we can't resign arrays using const.
 fruits.push('mangoes');
 // If wee wanna add to the end of the array we can use the push method as used in line 69.
@@ -84,7 +87,7 @@ console.log(fruits.indexOf('oranges'));
 
 
 // OBJECT LITERALS //
-// Object literals are basically key value pairs
+// Object literals are basically key value pairs.
 
 const person = {
     firstName: 'John',
@@ -214,7 +217,7 @@ todos.forEach(function(todos) {
 // for Map;
 todos.map(function(todos) {
     console.log(todos.Text);
-})
+});
 
 
 
