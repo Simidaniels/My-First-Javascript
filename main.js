@@ -215,13 +215,13 @@ todos.forEach(function(todos) {
 // A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array.
 
 // for Map;
-todos.map(function(todos) {
-    console.log(todos.Text);
+const todoText = todos.map(function(todos) {
+    return todos.Text;
 });
+console.log(todoText);
+// map loop`s: through and return an array of just the text values.
 
-
-
-
-
-
-
+// for filter
+const todosText = todos.filter(function (todos) {
+    
+});
