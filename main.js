@@ -1,8 +1,7 @@
 // alert on the webpage
 function sayHello()  {
-    alert('Hello Mr Daniel')
+    alert('Hello Mrs blessing')
 };
-
 
 // 1// String, Numbers, Boolean, null, undefined, 
 const name = 'John';
@@ -222,6 +221,11 @@ console.log(todoText);
 // map loop`s: through and return an array of just the text values.
 
 // for filter
-const todosText = todos.filter(function (todos) {
-    
+const todoCompleted = todos.filter(function(todo) {
+    return todo.isCompleted == true;
 });
+console.log(todoCompleted);
+
+                    // THE END OF THIS SECTION.
+// Move to main(2).js.
+// Don't forget you already unlinked this main.js for main(2).js.
