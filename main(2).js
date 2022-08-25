@@ -98,3 +98,140 @@ switch (pigment) {
 
 
                             // FUNCTIONS //
+// Creating a function with the 'function' keyword.
+
+
+    //    function addNums(num1 = 1, num2 = 1) {        //i added default numbers.
+    //        console.log(num1 + num2);         // if we run this nothing happens because we haven't call the function.
+    //        }
+    //        addNums(5,5);         // we pass our perimeters here num1 which is '5' and num2 which is '4'.
+// we could set default values by adding numbers to the function addNums.
+/*
+    Even if we do not pass any values in the perimeters, 
+    so far we added default number in the function it would run in the console
+*/
+/* 
+    if default number is added and we pass our perimeters by another figures
+    it will override the default numbers and console.log the ones in the perimeters.
+*/
+// for the most part we don't 'console.log' in function we usually 'return' from it.
+/*
+    function addNums(num1 = 1, num2 = 1) {
+        return num1 + num2;   // We return instead of suing the console in this place.
+        }
+    console.log(addNums(5, 5));
+*/
+// The easy way to do it is;
+const addNums = (num1 = 1, num2 = 1) => num1 + num2;        // We've gotten rid of the curly braces with the equal greater than sign '=>'.
+                                                        // so we do'nt need to return any value.
+console.log(addNums(5, 5));
+
+
+// Another way to pass it.
+const addNumbs = num1 => num1 + 5;
+    console.log(addNumbs(5));
+// I had to change the 'addNums' to addNumbs' here.
+
+
+
+
+                                // OBJECT ORIENTED PROGRAMMING //
+// We can construct objects using the CONSTRUCTOR FUNCTION.
+// There are 2 ways to do this we could use CONSTRUCTOR FUNCTION WITH PROTOTYPES or ES6 CLASSES.
+
+                    // CONSTRUCTOR FUNCTION //
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;     // using 'this' will set it to property of the object.
+    this.lastName = lastName;
+    this.dob = dob;
+
+    /* 
+        The date of birth is passed with a string however we can turn it into a date object
+        by using the date constructor.
+    */
+
+    this.dob = new Date(dob);       // this line wasn't included in the tutorial 
+                                    // i made it a reference for better understanding
+                                    // of turning date object by using the date constructor.
+
+
+            // we could run different function for CONSTRUCTOR
+// like using return function;
+    this.getBirthYear = function() {
+        return this.dob.getFullYear();
+    }
+    this.getFullName = function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+/*
+
+                                //now for the ES6 function;
+                    // creating a CLASS WITH METHODS(a methods is a function inside if a class).
+        class person {
+            constructor(firstName, lastName, dob) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.dob = dob;
+            }
+
+                getBirthYear() {
+                    return this.dob.getFullYear();
+                }
+                getFullName() {
+                    return `${this.firstName} ${this.lastName}`;
+                }
+            }
+            
+*/
+
+
+// Instantiate Object 
+const Person1 = new Person('john', 'doe', '4-3-1980');  //dob in string.
+const Person2 = new Person('mary', 'smith', '3-6-1970'); // dob in string.
+    console.log(Person1); 
+    console.log(Person1.getBirthYear());    // Birth year displayed in the console[for the return function].
+    console.log(Person1.getFullName());     // fullName displayed in the console[for the return function].
+
+
+
+
+
+
+
+
+                        // THIS IS MY OWN EXAMPLE //   // PROTOTYPES //
+
+function Color(primary, secondary, intermediate) {
+    this.primary = primary;
+    this.secondary = secondary;
+    this.intermediate = intermediate;
+
+    //using the PROTOTYPES for my example;
+    Color.prototype.getFullColor = function() {            //PROTOTYPE function is been used in my example.
+        return `${this.primary} ${this.secondary}`;
+    }
+}
+
+
+
+// Instantiate the COLOR object.
+const Color1 = new Color('red', 'grey', 'violet');
+    console.table(Color1);
+    console.log(Color1.getFullColor());
+
+// In the tutorial console.log was used but i used console.table.
+// I got the console.table from a page on instagram.
+// Using console.table in JS is better for bigger objects and it's good when debugging.
+
+                        // ABOVE IS MY OWN EXAMPLE FOR BETTER UNDERSTANDING //
+
+
+
+                    //ES6 also called ES2015//
+/*
+    With ES6 classes were added to javascript, it's important to know with classes,
+    it does the same exact thing under the hood(it adds the method to the prototype).
+
+*/
