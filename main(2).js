@@ -235,3 +235,6 @@ const Color1 = new Color('red', 'grey', 'violet');
     it does the same exact thing under the hood(it adds the method to the prototype).
 
 */
+
+
+// main(3).js next.

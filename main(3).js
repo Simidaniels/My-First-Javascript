@@ -89,20 +89,12 @@
 
 
 
-
-
-
-
-
-
-
-
                     // ADDING A USER, GRABBING THE VALUES AND OUTPUT THE USERS //
                 // grabbing from the DOM
 const myForm = document.querySelector('#my-form');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
-const msg = document.querySelector('#msg');
+const msg = document.querySelector('.msg');
 const userList = document.querySelector('#users');
 
 
@@ -118,9 +110,31 @@ function onSubmit(e) {
         
 
                                     // Form Validation
-    if (nameInput.value === '' || emailInput.value === '') {          // (Don't Submit form unless both fields are filled out).
-        msg.innerHTML = 'please enter all fields';                    // giving user a message to enter fields.
+    if(nameInput.value === '' || emailInput.value === '') {          // (Don't Submit form unless both fields are filled out).
+        msg.classList.add('error');     // Error style has been imported from our CSS file.(to style the notifications to fill all fields).       msg.innerHTML = 'please enter all fields';                    // giving user a notification to fill all fields.
+        msg.innerHTML = 'please input all fields';
+    
+        setTimeout(() => msg.remove(), 3000);              // To make the 'msg.innerHTML' disappear after 3s.(It's in 3000 because it counts as milliseconds so 3000ms = 3s).
     }  else {
-        console.log('success');                                       // Input fields success.
+            //    console.log('success');                                       // Input fields success.
+        
+
+        //  Basically create the 'name' and 'email' and add it as a list item.
+        //  Adding the 'name' ad 'email' into our ListItem in our HTML.
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
+        userList.appendChild(li);
+
+        // Clear the fields
+        nameInput.value = '';
+        emailInput.value = '';
     }
-};
+}
+// When we reload the page, all data is cleared. No data saved.
+// To have an application where we save data we need the backend to interact with it like NODE.JS or PHP that connects with the database.
+
+
+
+
+
+// CRASH COURSE COMPLETED.
